@@ -1,0 +1,207 @@
+<div class="card">
+  <div class="header" fxLayout fxLayout="row" fxLayoutAlign="center">
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABD0lEQVRIie2UPW7CQBCFP5IS0gEnoQdyAxAHSQoUUSD+Gm4DIiegoITkAOEMJIQWTDFvwY3xrqFAUZ402rX95r2xvTPwV1EGRsAHsFOsgCFQula8BWyBKCF+gOY14gcJTYAqkFfUgKme7YFGqHg5Vnn7Au9NnG+gGGIw4lx5GmbiDkIMPpVU9eDWxV2FGPwqqeDBfRJ3m0Z8iO2jgGJyvsS4wVprxSPPcb5CDN61vngYvGqdeXBPKGFNFGFHMQkdcTZk6Oom1kSRqqtjP70APGNv6Tq6Gyru0MCaKGlUbCTurvtZTIpYEy2x47vTfsD5s8RNM5mkwY0MF+N/k7sy6bmbjzc0WGAzak7gGL9vHAG+Ol6n6x8u5AAAAABJRU5ErkJggg=="
+    />
+    <div>Search</div>
+  </div>
+  <div class="body">
+    <form>
+      <div
+        fxLayout
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        fxLayoutGap="20px"
+      >
+        <mat-form-field>
+          <mat-label>Ministry/Department</mat-label>
+          <mat-select>
+            <mat-option [value]="1">
+              option1
+            </mat-option>
+            <mat-option [value]="2">
+              option2
+            </mat-option>
+            <mat-option [value]="3">
+              option3
+            </mat-option>
+            <mat-option [value]="4">
+              option4
+            </mat-option>
+            <mat-option [value]="5">
+              option4
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <section
+            class="example-section"
+            fxLayoutAlign="center center"
+            fxLayoutGap="20px"
+          >
+            <mat-checkbox class="example-margin">
+              Real time
+            </mat-checkbox>
+            <mat-checkbox class="example-margin">Archive</mat-checkbox>
+          </section>
+        </div>
+      </div>
+      <div fxLayout fxLayout="row">
+        <mat-form-field style="width: 100%;">
+          <!-- <mat-label>Enter tags using '#'</mat-label> -->
+          <input matInput placeholder="Enter tags using '#'" value="" />
+        </mat-form-field>
+      </div>
+      <div fxLayout fxLayout="row" fxLayoutAlign="start" fxLayoutGap="30px">
+        <mat-form-field>
+          <mat-label>From</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>TO</mat-label>
+          <input matInput [matDatepicker]="picker2" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <section fxLayoutAlign="start" fxLayoutGap="20px">
+          <div>
+            Include :
+          </div>
+          <mat-checkbox class="example-margin">
+            Checked
+          </mat-checkbox>
+          <mat-checkbox class="example-margin">Images</mat-checkbox>
+          <mat-checkbox class="example-margin">Video</mat-checkbox>
+        </section>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        fxLayoutGap="20px"
+        style="margin-top: 40px;"
+      >
+        <h3>Advanced Search</h3>
+      </div>
+      <div fxLayout fxLayout="row">
+        <mat-form-field style="width: 100%;">
+          <mat-label>Name of publication</mat-label>
+          <input matInput placeholder="Name of publication" value="" />
+        </mat-form-field>
+      </div>
+      <div
+        fxLayout
+        fxLayout="row"
+        fxLayoutAlign="space-between"
+        fxLayoutGap="20px"
+      >
+        <mat-form-field>
+          <mat-label>Media Type</mat-label>
+          <mat-select>
+            <mat-option [value]="1">
+              option1
+            </mat-option>
+            <mat-option [value]="2">
+              option2
+            </mat-option>
+            <mat-option [value]="3">
+              option3
+            </mat-option>
+            <mat-option [value]="4">
+              option4
+            </mat-option>
+            <mat-option [value]="5">
+              option4
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Sentiments</mat-label>
+          <mat-select>
+            <mat-option [value]="1">
+              option1
+            </mat-option>
+            <mat-option [value]="2">
+              option2
+            </mat-option>
+            <mat-option [value]="3">
+              option3
+            </mat-option>
+            <mat-option [value]="4">
+              option4
+            </mat-option>
+            <mat-option [value]="5">
+              option4
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div
+        fxLayout
+        fxLayout="row"
+        fxLayoutAlign="space-between"
+        fxLayoutGap="20px"
+      >
+        <mat-form-field>
+          <mat-label>State</mat-label>
+          <mat-select>
+            <mat-option [value]="1">
+              option1
+            </mat-option>
+            <mat-option [value]="2">
+              option2
+            </mat-option>
+            <mat-option [value]="3">
+              option3
+            </mat-option>
+            <mat-option [value]="4">
+              option4
+            </mat-option>
+            <mat-option [value]="5">
+              option4
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>District</mat-label>
+          <mat-select>
+            <mat-option [value]="1">
+              option1
+            </mat-option>
+            <mat-option [value]="2">
+              option2
+            </mat-option>
+            <mat-option [value]="3">
+              option3
+            </mat-option>
+            <mat-option [value]="4">
+              option4
+            </mat-option>
+            <mat-option [value]="5">
+              option4
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div
+    class="footer"
+    fxLayout
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="20px"
+  >
+    <button mat-flat-button color="warn">Search</button>
+  </div>
+</div>

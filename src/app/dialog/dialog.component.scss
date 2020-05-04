@@ -1,0 +1,19 @@
+.card {
+  margin: -24px;
+  .header {
+    font-size: 22px;
+    border-bottom: 1px solid grey;
+    color: grey;
+    padding: 16px;
+  }
+
+  .body {
+    padding: 10px 30px 10px 30px;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .footer {
+    padding: 16px;
+  }
+}
