@@ -6,7 +6,7 @@
     <div>Search</div>
   </div>
   <div class="body">
-    <form>
+    <form [formGroup]="search">
       <div
         fxLayout
         fxLayout="row"
@@ -15,20 +15,20 @@
       >
         <mat-form-field>
           <mat-label>Ministry/Department</mat-label>
-          <mat-select>
-            <mat-option [value]="1">
+          <mat-select formControlName="department">
+            <mat-option [value]="option1">
               option1
             </mat-option>
-            <mat-option [value]="2">
+            <mat-option [value]="option2">
               option2
             </mat-option>
-            <mat-option [value]="3">
+            <mat-option [value]="optoption3ion1">
               option3
             </mat-option>
-            <mat-option [value]="4">
+            <mat-option [value]="option4">
               option4
             </mat-option>
-            <mat-option [value]="5">
+            <mat-option [value]="option4">
               option4
             </mat-option>
           </mat-select>
@@ -39,23 +39,30 @@
             fxLayoutAlign="center center"
             fxLayoutGap="20px"
           >
-            <mat-checkbox class="example-margin">
+            <mat-checkbox class="example-margin" formControlName="realtime">
               Real time
             </mat-checkbox>
-            <mat-checkbox class="example-margin">Archive</mat-checkbox>
+            <mat-checkbox class="example-margin" formControlName="archive"
+              >Archive</mat-checkbox
+            >
           </section>
         </div>
       </div>
       <div fxLayout fxLayout="row">
         <mat-form-field style="width: 100%;">
           <!-- <mat-label>Enter tags using '#'</mat-label> -->
-          <input matInput placeholder="Enter tags using '#'" value="" />
+          <input
+            matInput
+            placeholder="Enter tags using '#'"
+            value=""
+            formControlName="tags"
+          />
         </mat-form-field>
       </div>
       <div fxLayout fxLayout="row" fxLayoutAlign="start" fxLayoutGap="30px">
         <mat-form-field>
           <mat-label>From</mat-label>
-          <input matInput [matDatepicker]="picker" />
+          <input matInput [matDatepicker]="picker" formControlName="from" />
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
@@ -64,10 +71,10 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>TO</mat-label>
-          <input matInput [matDatepicker]="picker2" />
+          <input matInput [matDatepicker]="picker2" formControlName="to" />
           <mat-datepicker-toggle
             matSuffix
-            [for]="picker"
+            [for]="picker2"
           ></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
@@ -78,25 +85,37 @@
           <div>
             Include :
           </div>
-          <mat-checkbox class="example-margin">
-            Checked
+          <mat-checkbox
+            class="example-margin"
+            formControlName="includeDocument"
+          >
+            Document
           </mat-checkbox>
-          <mat-checkbox class="example-margin">Images</mat-checkbox>
-          <mat-checkbox class="example-margin">Video</mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="includeImage"
+            >Images</mat-checkbox
+          >
+          <mat-checkbox class="example-margin" formControlName="includeVideo"
+            >Video</mat-checkbox
+          >
         </section>
       </div>
       <div
         fxLayout="row"
         fxLayoutAlign="center center"
         fxLayoutGap="20px"
-        style="margin-top: 40px;"
+        style="margin-top: 40px; font-size: 17px;"
       >
-        <h3>Advanced Search</h3>
+        <span>Advanced Search</span>
       </div>
       <div fxLayout fxLayout="row">
         <mat-form-field style="width: 100%;">
           <mat-label>Name of publication</mat-label>
-          <input matInput placeholder="Name of publication" value="" />
+          <input
+            matInput
+            placeholder="Name of publication"
+            value=""
+            formControlName="publication"
+          />
         </mat-form-field>
       </div>
       <div
@@ -107,7 +126,7 @@
       >
         <mat-form-field>
           <mat-label>Media Type</mat-label>
-          <mat-select>
+          <mat-select formControlName="mediaType">
             <mat-option [value]="1">
               option1
             </mat-option>
@@ -127,7 +146,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Sentiments</mat-label>
-          <mat-select>
+          <mat-select formControlName="sentiment">
             <mat-option [value]="1">
               option1
             </mat-option>
@@ -154,7 +173,7 @@
       >
         <mat-form-field>
           <mat-label>State</mat-label>
-          <mat-select>
+          <mat-select formControlName="state">
             <mat-option [value]="1">
               option1
             </mat-option>
@@ -174,7 +193,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>District</mat-label>
-          <mat-select>
+          <mat-select formControlName="district">
             <mat-option [value]="1">
               option1
             </mat-option>
@@ -202,6 +221,6 @@
     fxLayoutAlign="center center"
     fxLayoutGap="20px"
   >
-    <button mat-flat-button color="warn">Search</button>
+    <button mat-flat-button color="warn" (click)="startSearch()">Search</button>
   </div>
 </div>
